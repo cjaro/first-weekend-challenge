@@ -2,7 +2,7 @@ $(document).ready(function() {
   // var input = {};
   $("#button").on("click", function(){
     var firstName = $("#firstName").val();
-    var middleName = $("middleName").val();
+    var middleName = $("#middleName").val();
     var lastName = $("#lastName").val();
     var idNumber = $("#idNumber").val();
     var jobTitle = $("#jobTitle").val();
@@ -13,13 +13,8 @@ $(document).ready(function() {
     // $("#idNumber").val("");
     // $("#jobTitle").val("");
     // $("#annualSalary").val(""); //ask Louis why this didn"t work with the bottom code and examples from lecture??
-  });
-
-  console.log();
-
-  //following code is from what I learned during Monday"s lecture and practiced during the peer work, written by me and edited to fit this project
-  // adds new employee row to DOM. Append expects a string, converts to HTML
-  $("#resultTable").append(
+  
+    $("#resultTable").append(
     "<tr>" +
     "<td>" + firstName + "</td>" +
     "<td>" + middleName + "</td>" +
@@ -29,12 +24,14 @@ $(document).ready(function() {
     "<td>" + annualSalary + "</td>" +
     "</tr>"
   );
-  console.log(resultTable); //here I am getting a log & HTML disply of [object HTMLInputElement] in each input result field. Not sure how to fix.
-
+//following code is from what I learned during Monday"s lecture and practiced during the peer work, written by me and edited to fit this project
+// adds new employee row to DOM. Append expects a string, converts to HTML
   var newEmpMonthExp = annualSalary / 12;
-var previousMonthExp = $("#monthExp").text();
-var totalMonthExp = parseFloat(previousMonthExp) + newEmpMonthExp;
-$("#monthlyExpenses").text(totalMonthExp);
+  var previousMonthExp = $("#monthExp").text();
+  var totalMonthExp = parseFloat(previousMonthExp) + newEmpMonthExp;
+$("#monthExp").text(totalMonthExp);
+  });
+
 
 
   // $("#clear").on("click", function(){
